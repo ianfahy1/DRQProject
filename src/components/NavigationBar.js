@@ -10,6 +10,7 @@ const NavigationBar = () => {
             <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/list">List</Nav.Link>
+            <Nav.Link href="/createNewTask">Create a Task</Nav.Link>
             <Nav.Link></Nav.Link>
             </Nav>
           </Container>
