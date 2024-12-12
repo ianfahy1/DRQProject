@@ -17,16 +17,17 @@ application.use(body_parser.urlencoded({extended:true}));
 application.use(body_parser.json());
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://IanFahy:lampard14@drqproject2024.psofp.mongodb.net/?retryWrites=true&w=majority&appName=DRQProject2024');
+mongoose.connect('mongodb+srv://IanFahy:lampard14@drqproject2024.psofp.mongodb.net/DRQProject2024');
 
 const appSchema = new mongoose.Schema({
-    title:String,
-    example:String,
-    example2:String
+    taskName:String,
+    taskDetails:String,
+    taskDeadline:Date
 });
 
-const appModel = new mongoose.model('x', appSchema);
+const appModel = new mongoose.model('Tasks', appSchema);
 
-application.listen(portRef, () => {
+application.listen(portRef, function(err){
+    if(err) console.log("Error in server setup")
     console.log(`Server is running on http://localhost:${portRef}`)
 });
